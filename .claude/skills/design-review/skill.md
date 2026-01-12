@@ -387,7 +387,7 @@ Use the Linear MCP to create an issue with these settings:
 - **Team:** UX
 - **Project:** Design Review
 - **State:** Backlog
-- **Assignee:** The user running the review (use their Linear user if identifiable, otherwise leave unassigned)
+- **Assignee:** Use `get_user` with "me" to get the current authenticated Linear user
 - **Title:** `[Review Type]: [Project Name]` (e.g., "Exploratory Review: Automations Audit" or "Week 2 Ramp Check: Media Library")
 - **Description:** The full review artifact content in markdown
 
