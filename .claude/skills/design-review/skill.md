@@ -297,3 +297,13 @@ Be direct and constructive. The goal is to help designers catch issues and think
 For week 2, be encouraging and forward-looking. You're helping them start strong.
 
 For week 4, be honest about whether it meets the bar. There's still time to adjust, but less room for big pivots.
+
+---
+
+## Closing
+
+After saving the review artifact, ask:
+
+"Your review is saved. Anything about this process that could be better? If you have feedback on the skill itself, let me know and I can help you submit a suggestion."
+
+If they share feedback, offer to help them create a branch and PR with their suggestion.
