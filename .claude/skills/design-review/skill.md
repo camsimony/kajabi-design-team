@@ -363,21 +363,19 @@ For week 4, be honest about whether it meets the bar. There's still time to adju
 After saving the review artifact, display the output to the user in this format:
 
 ```
-## Review Complete
+**Review saved to:** `design-reviews/[filename].md`
 
-[Display the full Summary section from the saved review here]
+---
 
-**Full review saved to:** `design-reviews/[filename].md`
+## Full Design Review
 
-[Then display the key findings from each principle as a bulleted list]
+[Display the complete contents of the saved review file here, including all sections: Context Gathered, Summary, Review (all 3 principles), and Things to Discuss With Team]
 
 ---
 
 Your review is saved. Anything about this process that could be better? If you have feedback on the skill itself, let me know and I can help you submit a suggestion.
 ```
 
-**Why display the summary:** In the Claude Code desktop app, users benefit from seeing the summary directly in the conversation rather than only in the file diff. This makes it easier to quickly understand the key findings without having to open the file.
-
-**Why make the file path prominent:** Using a clear "Full review saved to:" label with the file path makes it obvious where to find the complete review and easier to click/open in the desktop app.
+**Why display the full review inline:** Users can read the complete review directly in the conversation without needing to open the file. The file path is still provided for reference and sharing, but the full content is immediately accessible.
 
 If they share feedback, offer to help them create a branch and PR with their suggestion.
