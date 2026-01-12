@@ -7,6 +7,21 @@ description: "Review product design work against Kajabi's design principles. Use
 
 Review design work against Kajabi's product design principles.
 
+## MCP Integrations
+
+This skill uses MCP (Model Context Protocol) tools when available:
+
+### Figma MCP
+- **When available:** Accept Figma file/frame URLs at any point in the conversation
+- **How to use:** When the user pastes a Figma URL (e.g., `https://www.figma.com/file/...` or `https://www.figma.com/design/...`), use the Figma MCP tools to fetch the frames directly
+- **Benefit:** No need for screenshots - pull designs directly from Figma
+
+### Linear MCP
+- **For pitches:** When the user indicates this is cycle work with a pitch, ask if they have a Linear link. Use Linear MCP to fetch the pitch content directly instead of asking them to paste/describe it.
+- **For output:** After generating the review, create a Linear issue with the review content (see "Saving the Output" section)
+
+---
+
 ## Opening Message
 
 When the user initiates a design review (by saying "design review" or "review this design"), greet them positively and explain the process:
@@ -15,9 +30,9 @@ When the user initiates a design review (by saying "design review" or "review th
 
 1. I'll ask you some questions to understand your work
 2. Review it against Kajabi's design principles, UI patterns, and design best practices
-3. Create a document that summarizes everything
+3. Create a Linear issue with the review for your design review meeting
 
-You can bring that doc to design review to help frame the feedback you need from the team."
+You can share Figma links or Linear pitch links anytime - I'll pull the content directly."
 
 Then begin the interview process.
 
@@ -45,7 +60,16 @@ Use AskUserQuestion:
 
 #### 2. Understand the project context
 
-Ask in plain text: **"Can you share the pitch or give me the key details: what problem is being solved, who it's for, and what's the scope?"**
+Use AskUserQuestion:
+- **Header:** "Pitch source"
+- **Question:** "How would you like to share the pitch?"
+- **Options:**
+  - "Linear link" — "I'll paste a link to the pitch in Linear"
+  - "I'll describe it" — "I'll share the key details directly"
+
+**If Linear link:** When they paste the Linear URL, use the Linear MCP to fetch the issue/document content. Extract the problem being solved, who it's for, and scope from the pitch.
+
+**If describing:** Ask in plain text: "What problem is being solved, who it's for, and what's the scope?"
 
 - Gather: problem being solved, who it's for, scope/goal
 - If the answer doesn't cover these clearly, ask follow-up questions
@@ -122,14 +146,18 @@ Use AskUserQuestion:
 - **Header:** "Screenshots"
 - **Question:** "What would you like to share?"
 - **Options:**
-  - "Screenshots from the build" — "Staging or production (ideal)"
-  - "Screenshots from Figma" — "Figma frames or mocks"
-  - "Figma link" — "I'll paste a Figma URL"
+  - "Figma link (Recommended)" — "I'll paste a Figma URL and you'll pull the frames directly"
+  - "Screenshots from the build" — "Staging or production"
+  - "Screenshots from Figma" — "I'll share image files"
 
-After they select, ask them to share. If auditing a full flow, tell them: "Share screenshots of each step in the process."
+**If Figma link:** When they paste the URL, use the Figma MCP to fetch the frames. Describe what you see and confirm your understanding.
 
-**When screenshots arrive without context:**
+**If screenshots:** Ask them to share. If auditing a full flow, tell them: "Share screenshots of each step in the process."
+
+**When designs arrive without context:**
 Say: "Got them. Here's what I think is happening in this flow: [describe each step]. Correct me if I'm wrong."
+
+**Figma links at any time:** If the user pastes a Figma URL at any point in the conversation (not just when asked), recognize it and use the Figma MCP to fetch the content. Acknowledge what you received.
 
 ---
 
@@ -148,14 +176,19 @@ Use AskUserQuestion:
 - **Header:** "Screenshots"
 - **Question:** "What would you like to share?"
 - **Options:**
+  - "Figma link (Recommended)" — "I'll paste a Figma URL and you'll pull the frames directly"
   - "Screenshots from the product" — "The real thing in staging or production"
-  - "Screenshots from Figma" — "Figma frames or mocks"
+  - "Screenshots from Figma" — "I'll share image files"
   - "Just a description" — "No visuals, I'll explain what I'm thinking about"
 
-After they select, ask them to share if applicable. If auditing a full flow, tell them: "Share screenshots of each step in the process."
+**If Figma link:** When they paste the URL, use the Figma MCP to fetch the frames. Describe what you see and confirm your understanding.
 
-**When screenshots arrive without context:**
+**If screenshots:** Ask them to share if applicable. If auditing a full flow, tell them: "Share screenshots of each step in the process."
+
+**When designs arrive without context:**
 Say: "Got them. Here's what I think is happening in this flow: [describe each step]. Correct me if I'm wrong."
+
+**Figma links at any time:** If the user pastes a Figma URL at any point in the conversation (not just when asked), recognize it and use the Figma MCP to fetch the content. Acknowledge what you received.
 
 ---
 
@@ -331,7 +364,11 @@ Use the Week 4 format, but replace cycle-specific fields:
 
 ## Saving the Output
 
-After generating the review artifact, automatically save it to the `design-reviews/` folder in the repo root.
+After generating the review artifact, save it in **two places**:
+
+### 1. Local File (always)
+
+Save to the `design-reviews/` folder in the repo root.
 
 **Filename format:** `YYYY-MM-DD-project-name-type.md`
 
@@ -344,7 +381,23 @@ After generating the review artifact, automatically save it to the `design-revie
 - `2026-01-15-checkout-flow-full-review.md`
 - `2026-01-10-onboarding-audit-exploratory.md`
 
-After saving, tell the designer where the file was saved so they can find it and share it.
+### 2. Linear Issue (when MCP available)
+
+Use the Linear MCP to create an issue with these settings:
+- **Team:** UX
+- **Project:** Design Review
+- **Assignee:** The user running the review (use their Linear user if identifiable, otherwise leave unassigned)
+- **Title:** `[Review Type]: [Project Name]` (e.g., "Exploratory Review: Automations Audit" or "Week 2 Ramp Check: Media Library")
+- **Description:** The full review artifact content in markdown
+
+**Review types for title:**
+- Week 2 → "Week 2 Ramp Check"
+- Week 4 → "Full Review"
+- Exploratory → "Exploratory Review"
+
+If the Linear MCP is not available, skip the issue creation and just save locally.
+
+After saving, tell the designer where to find both the local file and the Linear issue (if created).
 
 ---
 
@@ -362,6 +415,25 @@ For week 4, be honest about whether it meets the bar. There's still time to adju
 
 After saving the review artifact, display the output to the user in this format:
 
+### If both Linear and local file:
+
+```
+**Linear issue created:** [Issue title with link to the Linear issue]
+**Local file saved:** `design-reviews/[filename].md`
+
+---
+
+## Full Design Review
+
+[Display the complete contents of the review here, including all sections: Context Gathered, Summary, Review (all 3 principles), and Things to Discuss With Team]
+
+---
+
+Your review is ready for your design review meeting. Anything about this process that could be better? If you have feedback on the skill itself, let me know and I can help you submit a suggestion.
+```
+
+### If local file only (Linear unavailable):
+
 ```
 **Review saved to:** `design-reviews/[filename].md`
 
@@ -376,6 +448,6 @@ After saving the review artifact, display the output to the user in this format:
 Your review is saved. Anything about this process that could be better? If you have feedback on the skill itself, let me know and I can help you submit a suggestion.
 ```
 
-**Why display the full review inline:** Users can read the complete review directly in the conversation without needing to open the file. The file path is still provided for reference and sharing, but the full content is immediately accessible.
+**Why display the full review inline:** Users can read the complete review directly in the conversation without needing to open the file or Linear issue. The links/paths are still provided for reference and sharing, but the full content is immediately accessible.
 
 If they share feedback, offer to help them create a branch and PR with their suggestion.
