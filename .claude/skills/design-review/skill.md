@@ -360,8 +360,22 @@ For week 4, be honest about whether it meets the bar. There's still time to adju
 
 ## Closing
 
-After saving the review artifact, ask:
+After saving the review artifact, display the output to the user in this format:
 
-"Your review is saved. Anything about this process that could be better? If you have feedback on the skill itself, let me know and I can help you submit a suggestion."
+```
+**Review saved to:** `design-reviews/[filename].md`
+
+---
+
+## Full Design Review
+
+[Display the complete contents of the saved review file here, including all sections: Context Gathered, Summary, Review (all 3 principles), and Things to Discuss With Team]
+
+---
+
+Your review is saved. Anything about this process that could be better? If you have feedback on the skill itself, let me know and I can help you submit a suggestion.
+```
+
+**Why display the full review inline:** Users can read the complete review directly in the conversation without needing to open the file. The file path is still provided for reference and sharing, but the full content is immediately accessible.
 
 If they share feedback, offer to help them create a branch and PR with their suggestion.
