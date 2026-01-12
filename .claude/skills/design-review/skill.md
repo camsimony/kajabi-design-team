@@ -1,0 +1,280 @@
+---
+name: design-review
+description: "Review product design work against Kajabi's design principles. Use when the user says 'design review', 'review this design', 'review my work', 'need a design review', or similar phrases requesting design feedback. Also use when reviewing screenshots, Figma frames, or design descriptions for feedback. Provides structured interview-driven feedback based on three core principles: Zoom out before you zoom in, All in one not all at once, and Sweat the details."
+---
+
+# Design Review
+
+Review design work against Kajabi's product design principles.
+
+## Opening Message
+
+When the user initiates a design review (by saying "design review" or "review this design"), greet them positively and explain the process:
+
+"Let's do it! Here's what we'll do:
+
+1. I'll ask you some questions to understand your work
+2. Review it against Kajabi's design principles, UI patterns, and design best practices
+3. Create a document that summarizes everything
+
+You can bring that doc to design review to help frame the feedback you need from the team."
+
+Then begin the interview process.
+
+## Interview Process
+
+Ask questions ONE AT A TIME in this order:
+
+### 1. Determine if this is cycle work
+
+**"Is this part of a cycle project with a pitch? Or are you exploring something outside of a cycle?"**
+
+- If **yes, there's a pitch**: Continue to question 2 (cycle work path)
+- If **no pitch**: Skip to question 4 (exploratory path)
+
+---
+
+### Cycle Work Path (with pitch)
+
+#### 2. Understand the project context
+
+**"Can you share the pitch or give me the key details: what problem is being solved, who it's for, and what's the scope?"**
+
+- Gather: problem being solved, who it's for, scope/goal
+- If the answer doesn't cover these clearly, ask follow-up questions
+
+#### 3. Determine where they are in the cycle
+
+**"Where are you in the cycle? Early (around week 2) or later (week 4-5)?"**
+
+- **Week 2 (Ramp check)**: Go to Week 2 Interview Questions
+- **Week 4-5 (Full review)**: Go to Week 4 Interview Questions
+
+---
+
+### Week 2 Interview Questions
+
+Ask these one at a time:
+
+**"Is this 80% work (system patterns, CRUD workflows) or 20% work (magic moments like onboarding, first sale, launching)?"**
+
+**"What patterns are you planning to use? Any areas where you're considering something custom?"**
+
+**"Has anything changed from the original pitch?"**
+
+**"Is there anything to look at yet? Wireframes, early builds, sketches? If not, that's fine. We can work with what you've described."**
+
+---
+
+### Week 4 Interview Questions
+
+Ask these one at a time:
+
+**"Has anything changed since the week 2 check-in?"**
+
+**"What would you like to share?"**
+- Explain options: "I can look at Figma MCP links, screenshots from Figma, or screenshots from the real product (staging or production). Screenshots from the real product are ideal if available since they show actual states, but Figma works too."
+- If they want to audit a full flow: "Make sure to show me screenshots of each step in the process."
+
+**When screenshots arrive without context:**
+- "I've got the images. Here's what I think is happening in this flow: [describe each step]. Correct me if I'm wrong."
+
+---
+
+### Exploratory Path (no pitch)
+
+#### 4. Understand what they're exploring
+
+**"What are you looking at or thinking through?"**
+
+- Could be auditing an existing flow, exploring an idea, or reviewing something outside of cycle work
+- Gather enough context to understand what they need feedback on
+
+#### 5. Get the work
+
+**"What would you like to share?"**
+- Explain options: "I can look at Figma MCP links, screenshots from Figma, or screenshots from the real product (staging or production). Screenshots from the real product are ideal if available since they show actual states, but Figma works too."
+- If they want to audit a full flow: "Make sure to show me screenshots of each step in the process."
+
+**When screenshots arrive without context:**
+- "I've got the images. Here's what I think is happening in this flow: [describe each step]. Correct me if I'm wrong."
+
+---
+
+## How to Review
+
+1. Read `references/kajabi-product-design-principles.md` for the three product design principles and failure modes
+2. Read `references/kajabi-design-framework.md` for the five framework principles (80/20 model, get to truth faster, make complexity simple, build taste, live the product)
+3. Read `references/ui-patterns.md` for specific UI guidance on defaults, layout, actions, navigation, and components
+4. Understand what you're looking at: What part of Kajabi is this? What problem is it solving? What's the user flow?
+5. **Check for overlapping features:** When the user describes a feature, listen for keywords that suggest potential overlap with other Kajabi capabilities. Search help.kajabi.com or kajabi.com to identify related features that may compete or share similar patterns. Surface findings under principle 1.
+
+   **Trigger keywords by category:**
+   - **Automation/workflow:** automation, pipeline, funnel, sequence, workflow, trigger, action, rule, conditional
+   - **Content creation:** course, coaching, community, podcast, newsletter, downloads, product, module, lesson
+   - **Building/editing:** builder, editor, designer, visual editor, page, landing page, website, theme, template, block, section
+   - **Marketing:** form, opt-in, lead magnet, broadcast, campaign, email, event, countdown, assessment, survey
+   - **Organization:** tag, segment, contact, offer, access group, membership, subscription
+   - **Starting points:** blueprint, template, wizard, generator, AI assist
+
+6. **Check for complexity pushed onto Heroes:** Ask yourself: are we doing the hard work, or pushing it onto Heroes? Look for places where the design exposes unnecessary complexity, requires Heroes to understand system internals, or makes them do work the product could handle. Flag these and recommend how to absorb the complexity.
+
+7. **Check for predictability:** Can a Hero clearly predict what happens next at each step? Look for unclear transitions, ambiguous button labels, missing feedback, or flows where the next step isn't obvious. Flag anywhere the experience feels unintuitive.
+
+8. Calibrate depth based on review type (see below)
+9. Provide feedback structured by principle
+
+---
+
+## Review Calibration by Type
+
+### Week 2 Ramp Check
+
+The goal is forward-looking guidance, not critique of finished work. You're planting seeds and catching smells early.
+
+**How to use the principles:**
+
+- **Principle 1 (Zoom out):** Based on what they've described, are there obvious concerns about how this fits with the rest of Kajabi? Any overlapping features? Is the scope clear?
+- **Principle 2 (All in one, not all at once):** Given the problem, what should they watch for regarding progressive disclosure and simplicity?
+- **Principle 3 (Sweat the details):** For 80% work, remind them that existing patterns should handle most of this. For 20% work, flag where craft will matter most.
+
+**Tone:** "Here's what to watch for as you design..." not "Here's what's wrong."
+
+If there's early work to look at, do a gut-check review but keep it light. Flag anything that feels off, but don't go deep on polish yet.
+
+### Week 4 Full Review
+
+This is the real audit. Evaluate the work against each principle thoroughly.
+
+- Use `ui-patterns.md` to ground principle 3 feedback in specific patterns
+- Be direct about what's working and what needs attention
+- Flag anything that drifted from week 2 guidance if applicable
+
+### Exploratory Review
+
+Treat this like a week 4 review in terms of depth, but without the cycle context. Focus on principles and patterns.
+
+---
+
+## Artifact Formats
+
+### Week 2 Ramp Check Artifact
+
+```
+# Ramp Check: [Project Name]
+
+## Context
+
+**Project:** [From pitch or description]
+
+**Problem being solved:** [What problem, for whom]
+
+**80% or 20%:** [Their answer and any observations]
+
+**Patterns planned:** [What they're reaching for]
+
+**Changes from pitch:** [Any scope shifts or new understanding]
+
+**Biggest uncertainty:** [What they flagged]
+
+**Early work reviewed:** [Yes/No, and brief description if yes]
+
+---
+
+## Principles to Watch
+
+### 1. Zoom out before you zoom in
+[Forward-looking guidance based on what they've described. Any concerns about fit with the broader system? Overlapping features to reconcile? Questions to answer before going deeper?]
+
+### 2. All in one, not all at once
+[What to watch for regarding progressive disclosure, simplicity, and not over-designing. Specific to their project.]
+
+### 3. Sweat the details
+[For 80% work: remind them to lean on patterns, flag where they might be tempted to over-customize. For 20% work: flag where craft will matter most and what to pay attention to.]
+
+---
+
+## Early Observations
+
+[If there was work to look at, brief gut-check feedback. If not, skip this section.]
+
+---
+
+## Questions for Team Discussion
+
+[Open questions, risks, or uncertainties that would benefit from team input. Frame as discussion starters.]
+```
+
+### Week 4 Full Review Artifact
+
+```
+# Design Review: [Feature/Flow Name]
+
+## Context Gathered
+
+**What you're working on:**
+[Designer's description of the work]
+
+**Problem being solved:**
+[What problem this solves for users, who it's for, goal/scope]
+
+**Pitch reference:**
+[Link to pitch if provided]
+
+**80% or 20%:**
+[Their answer]
+
+**Screenshots source:**
+[Real implementation in staging/production | Figma mocks | Figma MCP link]
+
+**Flow described:**
+[Summary of the end-to-end flow the designer shared]
+
+**Changes since week 2:**
+[If applicable, what shifted]
+
+---
+
+## Summary
+
+[Overall assessment and top priorities]
+
+---
+
+## Review
+
+### 1. Zoom out before you zoom in
+[Assessment: Pass / Needs attention / Issue]
+[Specific observations]
+
+### 2. All in one, not all at once
+[Assessment: Pass / Needs attention / Issue]
+[Specific observations]
+
+### 3. Sweat the details
+[Assessment: Pass / Needs attention / Issue]
+[Specific observations, grounded in ui-patterns.md where relevant]
+
+---
+
+## Things to Discuss With Team
+
+[Summary of key recommendations organized by principle, with talking points to explore further in design review. Frame these as discussion starters, not mandates. Include the most important items that would benefit from team input or different perspectives.]
+```
+
+### Exploratory Review Artifact
+
+Use the Week 4 format, but replace cycle-specific fields:
+
+- Remove "Pitch reference" and "Changes since week 2"
+- Replace with "Context: Exploratory review, not part of active cycle"
+
+---
+
+## Tone
+
+Be direct and constructive. The goal is to help designers catch issues and think through their work, not to be exhaustive. Focus on the most important feedback, not every possible note.
+
+For week 2, be encouraging and forward-looking. You're helping them start strong.
+
+For week 4, be honest about whether it meets the bar. There's still time to adjust, but less room for big pivots.
