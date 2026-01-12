@@ -2,13 +2,27 @@
 
 Get structured feedback on your design work against Kajabi's design principles.
 
+## Setup
+
+Before your first review, authenticate the MCP integrations:
+
+1. **Open this repo in Claude Code** (Desktop app or terminal)
+2. **Run `/mcp`** to see connected servers
+3. **Authenticate Linear** — Select Linear, follow the OAuth flow in your browser, authorize the Kajabi workspace
+4. **Authenticate Figma** — Select Figma, follow the OAuth flow, authorize your Figma account
+
+Once authenticated, Claude can:
+- Pull Figma frames directly from URLs (no screenshots needed)
+- Fetch Linear pitch content when you paste a link
+- Create Linear issues with completed reviews in the Design Review project
+
 ## How to Use
 
 1. Open this repo in Claude Code (Desktop or terminal)
 2. Type `/design-review`
 3. Answer the interview questions
-4. Share screenshots when prompted
-5. Get a review document you can bring to design review meetings
+4. Share Figma links or screenshots when prompted
+5. Get a review saved locally and as a Linear issue
 
 ## What It Does
 
@@ -45,7 +59,11 @@ Claude generates a markdown document summarizing:
 - Assessment against each principle
 - Discussion points to bring to the team
 
-The file is automatically saved to `design-reviews/` with a filename like `2026-01-12-project-name-ramp-check.md`. Bring it to your design review meeting.
+Reviews are saved in two places:
+1. **Local file** — `design-reviews/2026-01-12-project-name-ramp-check.md`
+2. **Linear issue** — Created in the UX team's Design Review project
+
+Bring either to your design review meeting.
 
 ## Reference Docs
 
