@@ -80,44 +80,6 @@ Headlines should be scannable. Descriptions should be optional context, not requ
 
 ---
 
-## Layout & Space
-
-### Form inputs fill their container
-
-Inputs stretch to the width of their panel or column. The container has the max-width constraint, not the individual input.
-
-**Do this:**
-- In a right rail or narrow panel: inputs go full width
-- In a single-column layout on desktop: the column has a max-width (e.g., 600px), inputs fill that column
-- In a two-column layout: each column defines its own bounds, inputs fill their column
-
-**Not this:**
-- Inputs that stop at 50% width in a wide container
-- Inconsistent input widths in the same form
-- Forms that feel sparse because inputs don't fill available space
-
-**Why it matters:** Inputs that fill their container feel intentional. Inputs floating in empty space feel unfinished.
-
----
-
-### Responsive density
-
-Dense information (tables, grids, lists) needs room to breathe. If items blur together, add differentiation or reduce quantity.
-
-**Do this:**
-- Limit grid views to a scannable number of items before pagination or filtering
-- Use whitespace, dividers, or alternating backgrounds to separate items
-- Group related items with headers or categories
-
-**Not this:**
-- 9 rows × 3 columns of visually identical cards
-- Tables with 15+ rows and no visual grouping
-- Lists where you have to read every item to find what you want
-
-**Why it matters:** Density without differentiation creates visual noise. Users should be able to scan and locate, not search and squint.
-
----
-
 ## Actions & Hierarchy
 
 ### One primary action per view
