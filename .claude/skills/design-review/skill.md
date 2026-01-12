@@ -23,14 +23,21 @@ Then begin the interview process.
 
 ## Interview Process
 
+Use the `AskUserQuestion` tool for structured questions. This creates a guided wizard experience where designers can tap to select options instead of typing long responses. They can always choose "Other" if the options don't fit.
+
 Ask questions ONE AT A TIME in this order:
 
 ### 1. Determine if this is cycle work
 
-**"Is this part of a cycle project with a pitch? Or are you exploring something outside of a cycle?"**
+Use AskUserQuestion:
+- **Header:** "Project type"
+- **Question:** "Is this part of a cycle project?"
+- **Options:**
+  - "Yes, there's a pitch" — "This is cycle work with a shaped pitch"
+  - "No, this is exploratory" — "Auditing existing flows, exploring ideas, or work outside a cycle"
 
 - If **yes, there's a pitch**: Continue to question 2 (cycle work path)
-- If **no pitch**: Skip to question 4 (exploratory path)
+- If **no pitch**: Skip to the exploratory path
 
 ---
 
@@ -38,66 +45,117 @@ Ask questions ONE AT A TIME in this order:
 
 #### 2. Understand the project context
 
-**"Can you share the pitch or give me the key details: what problem is being solved, who it's for, and what's the scope?"**
+Ask in plain text: **"Can you share the pitch or give me the key details: what problem is being solved, who it's for, and what's the scope?"**
 
 - Gather: problem being solved, who it's for, scope/goal
 - If the answer doesn't cover these clearly, ask follow-up questions
 
 #### 3. Determine where they are in the cycle
 
-**"Where are you in the cycle? Early (around week 2) or later (week 4-5)?"**
+Use AskUserQuestion:
+- **Header:** "Cycle timing"
+- **Question:** "Where are you in the cycle?"
+- **Options:**
+  - "Week 2 (ramp check)" — "Early in the cycle, still shaping the approach"
+  - "Week 4-5 (full review)" — "Later in the cycle, reviewing higher-fidelity work"
 
-- **Week 2 (Ramp check)**: Go to Week 2 Interview Questions
-- **Week 4-5 (Full review)**: Go to Week 4 Interview Questions
+- **Week 2**: Go to Week 2 Interview Questions
+- **Week 4-5**: Go to Week 4 Interview Questions
 
 ---
 
 ### Week 2 Interview Questions
 
-Ask these one at a time:
+#### Work type
 
-**"Is this 80% work (system patterns, CRUD workflows) or 20% work (magic moments like onboarding, first sale, launching)?"**
+Use AskUserQuestion:
+- **Header:** "Work type"
+- **Question:** "Is this 80% or 20% work?"
+- **Options:**
+  - "80% (system patterns)" — "List views, forms, settings, CRUD workflows"
+  - "20% (magic moments)" — "Onboarding, first sale, launching, memorable experiences"
 
-**"What patterns are you planning to use? Any areas where you're considering something custom?"**
+#### Patterns
 
-**"Has anything changed from the original pitch?"**
+Ask in plain text: **"What patterns are you planning to use? Any areas where you're considering something custom?"**
 
-**"Is there anything to look at yet? Wireframes, early builds, sketches? If not, that's fine. We can work with what you've described."**
+#### Changes from pitch
+
+Use AskUserQuestion:
+- **Header:** "Pitch changes"
+- **Question:** "Has anything changed from the original pitch?"
+- **Options:**
+  - "No, staying close to the pitch" — "Scope and approach are as shaped"
+  - "Yes, some things have shifted" — "I'll share what's changed"
+
+If they select "Yes", ask them to describe what changed.
+
+#### Early work to review
+
+Use AskUserQuestion:
+- **Header:** "Work to share"
+- **Question:** "Is there anything to look at yet?"
+- **Options:**
+  - "Yes, I have screenshots" — "From Figma or the real product"
+  - "Just a description for now" — "No visuals yet, and that's fine"
+
+If they have screenshots, ask them to share. If auditing a full flow, tell them: "Share screenshots of each step in the process."
 
 ---
 
 ### Week 4 Interview Questions
 
-Ask these one at a time:
+#### Changes since week 2
 
-**"Has anything changed since the week 2 check-in?"**
+Use AskUserQuestion:
+- **Header:** "Changes"
+- **Question:** "Has anything changed since the week 2 check-in?"
+- **Options:**
+  - "No, on track" — "Approach is the same as week 2"
+  - "Yes, some things shifted" — "I'll share what's different"
 
-**"What would you like to share?"**
-- Explain options: "I can look at Figma MCP links, screenshots from Figma, or screenshots from the real product (staging or production). Screenshots from the real product are ideal if available since they show actual states, but Figma works too."
-- If they want to audit a full flow: "Make sure to show me screenshots of each step in the process."
+If they select "Yes", ask them to describe what changed.
+
+#### What to share
+
+Use AskUserQuestion:
+- **Header:** "Screenshots"
+- **Question:** "What would you like to share?"
+- **Options:**
+  - "Screenshots from the build" — "Staging or production (ideal)"
+  - "Screenshots from Figma" — "Figma frames or mocks"
+  - "Figma link" — "I'll paste a Figma URL"
+
+After they select, ask them to share. If auditing a full flow, tell them: "Share screenshots of each step in the process."
 
 **When screenshots arrive without context:**
-- "I've got the images. Here's what I think is happening in this flow: [describe each step]. Correct me if I'm wrong."
+Say: "Got them. Here's what I think is happening in this flow: [describe each step]. Correct me if I'm wrong."
 
 ---
 
 ### Exploratory Path (no pitch)
 
-#### 4. Understand what they're exploring
+#### What they're exploring
 
-**"What are you looking at or thinking through?"**
+Ask in plain text: **"What are you looking at or thinking through?"**
 
 - Could be auditing an existing flow, exploring an idea, or reviewing something outside of cycle work
 - Gather enough context to understand what they need feedback on
 
-#### 5. Get the work
+#### What to share
 
-**"What would you like to share?"**
-- Explain options: "I can look at Figma MCP links, screenshots from Figma, or screenshots from the real product (staging or production). Screenshots from the real product are ideal if available since they show actual states, but Figma works too."
-- If they want to audit a full flow: "Make sure to show me screenshots of each step in the process."
+Use AskUserQuestion:
+- **Header:** "Screenshots"
+- **Question:** "What would you like to share?"
+- **Options:**
+  - "Screenshots from the product" — "The real thing in staging or production"
+  - "Screenshots from Figma" — "Figma frames or mocks"
+  - "Just a description" — "No visuals, I'll explain what I'm thinking about"
+
+After they select, ask them to share if applicable. If auditing a full flow, tell them: "Share screenshots of each step in the process."
 
 **When screenshots arrive without context:**
-- "I've got the images. Here's what I think is happening in this flow: [describe each step]. Correct me if I'm wrong."
+Say: "Got them. Here's what I think is happening in this flow: [describe each step]. Correct me if I'm wrong."
 
 ---
 
