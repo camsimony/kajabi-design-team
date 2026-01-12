@@ -45,7 +45,7 @@ Claude generates a markdown document summarizing:
 - Assessment against each principle
 - Discussion points to bring to the team
 
-Save this to `design-reviews/` and bring it to your design review meeting.
+The file is automatically saved to `design-reviews/` with a filename like `2026-01-12-project-name-ramp-check.md`. Bring it to your design review meeting.
 
 ## Reference Docs
 

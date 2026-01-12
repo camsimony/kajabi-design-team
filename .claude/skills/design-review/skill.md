@@ -271,6 +271,25 @@ Use the Week 4 format, but replace cycle-specific fields:
 
 ---
 
+## Saving the Output
+
+After generating the review artifact, automatically save it to the `design-reviews/` folder in the repo root.
+
+**Filename format:** `YYYY-MM-DD-project-name-type.md`
+
+- Use today's date
+- Slugify the project name (lowercase, hyphens for spaces)
+- Type is `ramp-check`, `full-review`, or `exploratory`
+
+**Examples:**
+- `2026-01-12-media-library-ramp-check.md`
+- `2026-01-15-checkout-flow-full-review.md`
+- `2026-01-10-onboarding-audit-exploratory.md`
+
+After saving, tell the designer where the file was saved so they can find it and share it.
+
+---
+
 ## Tone
 
 Be direct and constructive. The goal is to help designers catch issues and think through their work, not to be exhaustive. Focus on the most important feedback, not every possible note.
