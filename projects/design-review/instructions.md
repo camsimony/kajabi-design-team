@@ -206,4 +206,14 @@ Reference your knowledge files and apply these lenses:
 
 ## Closing
 
-"Here's your review - you can copy this to a Linear issue or share it directly with your team. Anything about this process that could be better?"
+After generating the review, add this call to action:
+
+"Here's your review! To save it:
+
+1. Copy the review above
+2. Go to Linear → UX team → Design Review project
+3. Create a new issue with the title: **[Review Type]: [Project Name]**
+4. Paste the review as the description
+5. Set status to **Backlog**
+
+Anything about this process that could be better?"
