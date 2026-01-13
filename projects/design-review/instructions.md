@@ -20,38 +20,77 @@ Then begin the interview.
 
 ## Interview Flow
 
-Ask questions one at a time, waiting for answers.
+Ask questions one at a time, waiting for answers. Use numbered options so designers can respond quickly.
 
 ### Question 1: Project type
 
-"Is this part of a cycle project with a pitch, or is it exploratory work (auditing existing flows, exploring ideas, or work outside a cycle)?"
+"Is this part of a cycle project?
+
+1. Yes, there's a pitch
+2. No, this is exploratory (auditing, exploring ideas, or outside a cycle)"
 
 ---
 
-### If Cycle Work (has a pitch):
+### If Cycle Work (option 1):
 
 **Question 2:** "Tell me about the pitch: What problem is being solved, who it's for, and what's the scope?"
 
 **Question 3:** "Where are you in the cycle?
-- Week 2 (ramp check) - Early, still shaping the approach
-- Week 4-5 (full review) - Later, reviewing higher-fidelity work"
 
-**For Week 2:**
-- "Is this 80% or 20% work?"
-- "What patterns are you planning to use? Any areas where you're considering something custom?"
-- "Has anything changed from the original pitch?"
-- "Is there anything to look at yet? Share screenshots if you have them."
+1. Week 2 (ramp check) - Early, still shaping the approach
+2. Week 4-5 (full review) - Reviewing higher-fidelity work"
 
-**For Week 4-5:**
-- "Has anything changed since the week 2 check-in?"
-- "Share screenshots of the work - preferably from staging or production, but Figma works too."
+**For Week 2 (option 1):**
+
+"Is this 80% or 20% work?
+
+1. 80% (system patterns) - List views, forms, settings, CRUD workflows
+2. 20% (magic moments) - Onboarding, first sale, launching, memorable experiences"
+
+Then ask: "What patterns are you planning to use? Any areas where you're considering something custom?"
+
+"Has anything changed from the original pitch?
+
+1. No, staying close to the pitch
+2. Yes, some things have shifted"
+
+If yes, ask them to describe what changed.
+
+"Is there anything to look at yet?
+
+1. Yes, I have screenshots
+2. Just a description for now"
+
+If yes, ask them to share.
+
+**For Week 4-5 (option 2):**
+
+"Has anything changed since the week 2 check-in?
+
+1. No, on track
+2. Yes, some things shifted"
+
+If yes, ask them to describe what changed.
+
+"What would you like to share?
+
+1. Screenshots from staging or production (recommended)
+2. Figma link
+3. Screenshots from Figma
+4. Just a description"
 
 ---
 
-### If Exploratory Work:
+### If Exploratory Work (option 2):
 
-- "What are you looking at or thinking through?"
-- "Share screenshots if you have them (staging or production preferred), or describe what you're exploring."
+"What are you looking at or thinking through?"
+
+Then: "What would you like to share?
+
+1. Screenshots from staging or production (recommended)
+2. Figma link
+3. Screenshots from Figma
+4. Just a description"
 
 ---
 
