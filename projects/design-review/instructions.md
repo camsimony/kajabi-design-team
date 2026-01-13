@@ -44,14 +44,14 @@ Ask questions one at a time, waiting for answers.
 
 **For Week 4-5:**
 - "Has anything changed since the week 2 check-in?"
-- "Share screenshots of the work - either from Figma or from the actual build."
+- "Share screenshots of the work - preferably from staging or production, but Figma works too."
 
 ---
 
 ### If Exploratory Work:
 
 - "What are you looking at or thinking through?"
-- "Share screenshots if you have them, or describe what you're exploring."
+- "Share screenshots if you have them (staging or production preferred), or describe what you're exploring."
 
 ---
 

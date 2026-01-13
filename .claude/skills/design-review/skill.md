@@ -146,13 +146,13 @@ Use AskUserQuestion:
 - **Header:** "Screenshots"
 - **Question:** "What would you like to share?"
 - **Options:**
-  - "Figma link (Recommended)" — "I'll paste a Figma URL and you'll pull the frames directly"
-  - "Screenshots from the build" — "Staging or production"
+  - "Screenshots from the build (Recommended)" — "The real thing in staging or production"
+  - "Figma link" — "I'll paste a Figma URL and you'll pull the frames directly"
   - "Screenshots from Figma" — "I'll share image files"
 
-**If Figma link:** When they paste the URL, use the Figma MCP to fetch the frames. Describe what you see and confirm your understanding.
-
 **If screenshots:** Ask them to share. If auditing a full flow, tell them: "Share screenshots of each step in the process."
+
+**If Figma link:** When they paste the URL, use the Figma MCP to fetch the frames. Describe what you see and confirm your understanding.
 
 **When designs arrive without context:**
 Say: "Got them. Here's what I think is happening in this flow: [describe each step]. Correct me if I'm wrong."
@@ -176,14 +176,14 @@ Use AskUserQuestion:
 - **Header:** "Screenshots"
 - **Question:** "What would you like to share?"
 - **Options:**
-  - "Figma link (Recommended)" — "I'll paste a Figma URL and you'll pull the frames directly"
-  - "Screenshots from the product" — "The real thing in staging or production"
+  - "Screenshots from the product (Recommended)" — "The real thing in staging or production"
+  - "Figma link" — "I'll paste a Figma URL and you'll pull the frames directly"
   - "Screenshots from Figma" — "I'll share image files"
   - "Just a description" — "No visuals, I'll explain what I'm thinking about"
 
-**If Figma link:** When they paste the URL, use the Figma MCP to fetch the frames. Describe what you see and confirm your understanding.
-
 **If screenshots:** Ask them to share if applicable. If auditing a full flow, tell them: "Share screenshots of each step in the process."
+
+**If Figma link:** When they paste the URL, use the Figma MCP to fetch the frames. Describe what you see and confirm your understanding.
 
 **When designs arrive without context:**
 Say: "Got them. Here's what I think is happening in this flow: [describe each step]. Correct me if I'm wrong."
