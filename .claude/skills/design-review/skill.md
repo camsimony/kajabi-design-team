@@ -22,9 +22,81 @@ This skill uses MCP (Model Context Protocol) tools when available:
 
 ---
 
+## Known Limitations & Requested Improvements
+
+### Embed Figma screenshots in Linear issues
+**Status:** Requested
+
+**Problem:** When the Figma MCP takes screenshots of design frames, those images are rendered in the conversation but don't provide persistent URLs that can be embedded in the Linear issue body. Currently, Figma links are added as attachments (which Linear can unfurl), but the actual screenshot images cannot be embedded inline in the issue description.
+
+**Desired behavior:** When creating a Linear issue for a design review, embed the actual Figma screenshot images directly in the issue body so reviewers can see the designs without clicking through to Figma.
+
+**Workaround:** Figma frame URLs are added as Linear attachments, which show thumbnail previews. Designers can also manually add screenshots to the issue after creation.
+
+---
+
+## Quick Start with Links
+
+Users can provide Linear and Figma links upfront to skip most questions:
+
+```
+/design-review <linear-project-url> <figma-url-1> <figma-url-2> ...
+```
+
+**Example:**
+```
+/design-review https://linear.app/kajabi/project/my-project-abc123 https://figma.com/design/xyz/File?node-id=1-2 https://figma.com/design/xyz/File?node-id=3-4
+```
+
+When links are provided upfront:
+1. Fetch the Linear project to get pitch context
+2. Auto-detect cycle week from the project's `startDate` (see "Cycle Week Auto-Detection")
+3. Fetch all Figma frames in parallel
+4. Describe what you see in the designs and confirm understanding
+5. Skip directly to the remaining questions (80/20, patterns, changes from pitch)
+
+This reduces the back-and-forth significantly for cycle work.
+
+---
+
+## Cycle Week Auto-Detection
+
+When a Linear project URL is provided, calculate the cycle week automatically:
+
+1. Get the project's `startDate` from Linear
+2. Calculate days elapsed: `today - startDate`
+3. Determine review type:
+   - **Days 0-13 (Week 1-2):** Ramp check
+   - **Days 14+ (Week 3+):** Full review
+
+**Example calculation:**
+- Project `startDate`: 2026-01-08
+- Today: 2026-01-14
+- Days elapsed: 6
+- Result: Week 1-2 → **Ramp check**
+
+After auto-detecting, confirm with the user: "Based on the project start date (Jan 8), you're in week 1-2, so this will be a **ramp check**. Sound right?"
+
+If they disagree (e.g., "actually we're doing a full review"), respect their override.
+
+---
+
 ## Opening Message
 
-When the user initiates a design review (by saying "design review" or "review this design"), greet them positively and explain the process:
+### When links are provided upfront
+
+Skip the greeting and immediately:
+1. Fetch the Linear project
+2. Fetch all Figma frames (in parallel)
+3. Summarize what you found:
+   - Project name and problem being solved
+   - Cycle week (auto-detected)
+   - What you see in the Figma frames
+4. Confirm understanding, then proceed to remaining questions
+
+### When no links are provided
+
+Greet them and explain the process:
 
 "Let's do it! Here's what we'll do:
 
@@ -32,17 +104,27 @@ When the user initiates a design review (by saying "design review" or "review th
 2. Review it against Kajabi's design principles, UI patterns, and design best practices
 3. Create a Linear issue with the review for your design review meeting
 
+**Tip:** You can also run `/design-review <linear-url> <figma-urls...>` to skip most questions.
+
 You can share Figma links or Linear pitch links anytime - I'll pull the content directly."
 
 Then begin the interview process.
+
+---
 
 ## Interview Process
 
 Use the `AskUserQuestion` tool for structured questions. This creates a guided wizard experience where designers can tap to select options instead of typing long responses. They can always choose "Other" if the options don't fit.
 
+### When links were provided upfront
+
+Skip to the "Remaining Questions" section below — you already have the pitch, cycle week, and designs.
+
+### When no links were provided
+
 Ask questions ONE AT A TIME in this order:
 
-### 1. Determine if this is cycle work
+#### 1. Determine if this is cycle work
 
 Use AskUserQuestion:
 - **Header:** "Project type"
@@ -67,16 +149,18 @@ Use AskUserQuestion:
   - "Linear link" — "I'll paste a link to the pitch in Linear"
   - "I'll describe it" — "I'll share the key details directly"
 
-**If Linear link:** When they paste the Linear URL, use the Linear MCP to fetch the issue/document content. Extract the problem being solved, who it's for, and scope from the pitch.
+**If Linear link:** When they paste the Linear URL, use the Linear MCP to fetch the issue/document content. Extract the problem being solved, who it's for, and scope from the pitch. Then auto-detect the cycle week from `startDate` and confirm.
 
-**If describing:** Ask in plain text: "What problem is being solved, who it's for, and what's the scope?"
+**If describing:** Ask in plain text: "What problem is being solved, who it's for, and what's the scope?" Then ask about cycle timing manually.
 
 - Gather: problem being solved, who it's for, scope/goal
 - If the answer doesn't cover these clearly, ask follow-up questions
 
 #### 3. Determine where they are in the cycle
 
-Use AskUserQuestion:
+**If Linear link was provided:** Auto-detect from `startDate` (see "Cycle Week Auto-Detection" above). Confirm with user.
+
+**If no Linear link:** Use AskUserQuestion:
 - **Header:** "Cycle timing"
 - **Question:** "Where are you in the cycle?"
 - **Options:**
@@ -89,6 +173,8 @@ Use AskUserQuestion:
 ---
 
 ### Week 2 Interview Questions
+
+**When links were provided upfront:** Skip "Early work to review" — you already have the Figma frames. Just ask the first three questions below.
 
 #### Work type
 
@@ -116,6 +202,8 @@ If they select "Yes", ask them to describe what changed.
 
 #### Early work to review
 
+**Skip this if Figma links were provided upfront.**
+
 Use AskUserQuestion:
 - **Header:** "Work to share"
 - **Question:** "Is there anything to look at yet?"
@@ -129,6 +217,8 @@ If they have screenshots, ask them to share. If auditing a full flow, tell them:
 
 ### Week 4 Interview Questions
 
+**When links were provided upfront:** Skip "What to share" — you already have the Figma frames. Just ask about changes since week 2.
+
 #### Changes since week 2
 
 Use AskUserQuestion:
@@ -141,6 +231,8 @@ Use AskUserQuestion:
 If they select "Yes", ask them to describe what changed.
 
 #### What to share
+
+**Skip this if Figma links were provided upfront.**
 
 Use AskUserQuestion:
 - **Header:** "Screenshots"
