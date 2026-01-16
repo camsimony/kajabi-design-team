@@ -98,6 +98,7 @@ Then wait for them to share. Don't ask a bunch of questions upfront.
 2. **Describe what you understand:**
    - "Here's what I think is happening in this flow: [your understanding]"
    - "It looks like you're solving [problem] for [who] by [approach]"
+   - "The emotional core of this seems to be [moment] - is that right?"
 3. **Ask follow-up questions only if needed** for clarity:
    - "A few things I want to make sure I understand before giving feedback: [specific questions]"
    - Don't ask questions you can answer from what they shared
@@ -136,6 +137,32 @@ Then wait for them to share. Don't ask a bunch of questions upfront.
 - Are the details polished? (Use ui-patterns.md to ground this feedback)
 - For "80% work" (system patterns like list views, forms, CRUD): patterns should handle most of it
 - For "20% work" (magic moments like onboarding, first sale): craft matters more here
+- **Watch for emotional moments hiding in 80% work** - a cancellation modal is structurally simple (80%) but emotionally significant (needs 20% attention)
+
+**4. Identify emotional moments**
+
+Some screens are purely functional (list views, settings, CRUD). Others carry emotional weight - they're moments where the user's relationship with the product (or the Hero) is at stake.
+
+**Moments that often need emotional design:**
+- Cancellation/churn flows - last chance to retain
+- Welcome/onboarding - first impression
+- Success states - celebrating wins (first sale, course completion)
+- Empty states for new features - invitation to engage
+- Error states with real consequences - reassurance needed
+- Personal messages from Heroes to members - human connection
+
+**What to look for:**
+- Is the visual treatment matching the emotional intent?
+- Does a "personal message" actually feel personal? (Photo > logo, message styling > plain text)
+- Is a "celebration" actually celebratory? (Motion, color, delight)
+- Is a "retention moment" warm and human, or cold and transactional?
+
+**Failure mode:** Treating emotional moments with standard system patterns. A cancellation modal with a Hero's personal message shouldn't look like a delete confirmation. The content is personal but the container is generic.
+
+**Questions to ask:**
+- What is this moment supposed to *feel like* for the user?
+- Does the visual design deliver that feeling?
+- If you removed the copy, would the design still communicate the intended tone?
 
 ---
 
@@ -176,9 +203,11 @@ Structure your feedback around the three principles, but don't be rigid about it
 
 **On the details:** [Principle 3 observations - patterns, polish, craft]
 
+**On emotional moments:** [Principle 4 observations - does the design deliver the intended feeling?]
+
 **Questions this raised for me:** [Open questions worth thinking through]"
 
-Adjust based on what's relevant. If there's no overlap concern, don't force that section.
+Adjust based on what's relevant. If there's no overlap concern, don't force that section. If there's no emotional moment in the flow, skip that section.
 
 ---
 
