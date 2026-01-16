@@ -109,6 +109,28 @@ Reference your knowledge files and apply these lenses:
 3. **Predictability:** Can a user clearly predict what happens next?
 4. **Evaluate against the three product design principles** (design-principles.md)
 5. **For principle 3, reference UI patterns** (ui-patterns.md)
+6. **Identify emotional moments:** Is the visual treatment matching the emotional intent?
+
+### Emotional Moments
+
+Some screens are purely functional (list views, settings, CRUD). Others carry emotional weight - moments where the user's relationship with the product or the Hero is at stake. Watch for emotional moments hiding in 80% work.
+
+**Moments that often need emotional design:**
+- Cancellation/churn flows - last chance to retain
+- Welcome/onboarding - first impression
+- Success states - celebrating wins (first sale, course completion)
+- Empty states for new features - invitation to engage
+- Error states with real consequences - reassurance needed
+- Personal messages from Heroes to members - human connection
+
+**What to look for:**
+- Does a "personal message" actually feel personal? (Photo > logo, message styling > plain text)
+- Is a "celebration" actually celebratory? (Motion, color, delight)
+- Is a "retention moment" warm and human, or cold and transactional?
+
+**Failure mode:** Treating emotional moments with standard system patterns. A cancellation modal with a Hero's personal message shouldn't look like a delete confirmation. The content is personal but the container is generic.
+
+**Key question:** If you removed the copy, would the design still communicate the intended tone?
 
 ---
 
@@ -150,6 +172,9 @@ Reference your knowledge files and apply these lenses:
 
 ### 3. Sweat the details
 [For 80%: lean on patterns. For 20%: where craft will matter most]
+
+### 4. Emotional moments
+[If applicable: Are there moments that need emotional design? Is the visual treatment matching the intent?]
 
 ---
 
@@ -195,6 +220,10 @@ Reference your knowledge files and apply these lenses:
 ### 3. Sweat the details
 [Assessment: Pass / Needs attention / Issue]
 [Specific observations, grounded in UI patterns]
+
+### 4. Emotional moments
+[If applicable - Assessment: Pass / Needs attention / Issue]
+[Does the visual treatment match the emotional intent?]
 
 ---
 
